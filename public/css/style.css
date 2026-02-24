@@ -1,0 +1,439 @@
+/* Base */
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    background-color: #f4f1ea;
+    margin: 0;
+    padding: 0;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 4rem;
+}
+
+
+/* Navbar */
+
+.navbar {
+    height: 4rem;
+    background-color: #f8f6f2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-brand {
+    font-size: 1.7rem !important;
+    font-weight: 900;
+    color: #3e3e3e !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: #555555 !important;
+    margin-right: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #2e7d32 !important;
+}
+
+
+/* Product Cards */
+
+.products-heading {
+    color: #3e3e3e;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.product-card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: none !important;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: white;
+    border-radius: 0.75rem;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 20rem;
+}
+
+.card-img-top {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .card-img-top {
+    opacity: 0.85;
+}
+
+.sold-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sold-badge {
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    transform: rotate(-15deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.condition-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.condition-badge.new {
+    background-color: #28a745;
+    color: white;
+}
+
+.condition-badge.like\ new {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.condition-badge.used {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.card-body {
+    padding: 1.2rem !important;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.card-text b {
+    color: #333333;
+    font-weight: 600;
+}
+
+.card-text small {
+    color: #999999;
+    font-size: 0.85rem;
+}
+
+.price {
+    font-size: 1.3rem;
+    color: #2e7d32;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.product-link {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.card-img-overlay {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem !important;
+    background-color: transparent !important;
+}
+
+.card:hover .card-img-top {
+    opacity: 0.7;
+}
+
+
+/* About */
+.about-hero {
+    text-align: center;
+    padding: 4rem 1rem 3rem 1rem;
+    background-color: #f4f4f4;
+}
+
+.about-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+.about-hero p {
+    color: #555;
+    margin-top: 0.5rem;
+     border-radius: 2rem;
+}
+
+.about-section {
+    padding: 4rem 1rem;
+   
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.about-text h2 {
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    color: #444;
+    line-height: 1.7;
+}
+
+.values-section {
+    background-color: #fafafa;
+    padding: 4rem 1rem;
+    border-radius: 1rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.value-card h4 {
+    margin-bottom: 1rem;
+    color: #2e7d32;
+}
+
+.value-card p {
+    color: #555;
+}
+
+.cta-section {
+    padding: 4rem 1rem;
+}
+
+.about-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-points li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.about-points li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+
+/* Forms */
+
+.form-control, .form-select {
+    border: 1px solid #ddd;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+.add-btn, .edit-btn {
+    background-color: #2e7d32;
+    border: none !important;
+    color: white;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover, .edit-btn:hover {
+    background-color: #1b5e20;
+}
+
+
+/* Home Page */
+
+.reborn-hero {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    margin-left: -50vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 8rem;
+    background:
+        linear-gradient(to left, rgba(0,0,0,0.45), rgba(0,0,0,0.15)),
+        url("/images/reborn-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.reborn-content {
+    max-width: 520px;
+    text-align: right;
+}
+
+.reborn-title {
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: #ffffff;
+    line-height: 1.05;
+}
+
+.reborn-caption {
+    font-size: 1.35rem;
+    margin-top: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 400;
+}
+
+.reborn-buttons .btn {
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.reborn-buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .reborn-hero {
+        justify-content: center;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .reborn-content {
+        text-align: center;
+    }
+}
+
+/* Footer */
+
+.footer {
+    background-color: #2f2f2f;
+    color: #dcdcdc;
+    padding: 3rem 0 1.5rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-brand h5 {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: #b5b5b5;
+    margin: 0;
+}
+
+.footer-links a {
+    color: #cfcfcf;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #2e7d32;
+}
+
+.footer-socials a {
+    color: #cfcfcf;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #2e7d32;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #9e9e9e;
+}
+
+

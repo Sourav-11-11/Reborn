@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %>
+  <br>
+  <h3 class="fw-bold text-center mb-4">
+    The Second Life Store
+    <i class="fa-solid fa-heart"></i>
+  </h3> 
+  <br>
+
+  <% if (!allProducts || allProducts.length === 0) { %>
+    <div class="alert alert-info">No products yet. <a href="/products/new">List an item</a></div>
+  
+    <% } else { %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <% for (let product of allProducts) { %>
+        
+        <div class="col">
+          <a href="/products/<%= product._id %>" class="product-link">
+            <div class="card h-100 product-card">
+              <div class="product-image-container">
+                <img src="<%= product.image %>" class="card-img-top" alt="<%= product.productName %>">
+                <% if (product.isSold) { %>
+                  <div class="sold-overlay"><span class="sold-badge">SOLD</span></div>
+                <% } %>
+                <span class="condition-badge <%= product.condition.toLowerCase().replace(/\s+/g,'-') %>"><%= product.condition %></span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title mb-1"><%= product.productName %></h5>
+                <p class="mb-1 text-muted small"><%= product.category %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="fw-bold price">₹ <%= product.price.toLocaleString("en-IN") %></div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% } %>
+    </div>
+  <% } %>
+
+  <div class="mt-4 text-center text-muted small">&copy; <%= new Date().getFullYear() %> ReBorn</div>
+</div>

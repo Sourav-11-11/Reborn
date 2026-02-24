@@ -1,0 +1,47 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3 mb-5">
+  <div class="col-12 mb-3">
+    <h3>Product Details</h3>
+    
+    <% if (product.isSold) { %>
+      <div class="alert alert-warning" role="alert">
+        <strong>Sold!</strong> This product has already been sold.
+      </div>
+    <% } %>
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <div class="card border-0">
+      <img src="<%= product.image %>" class="show-img" alt="product image">
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <div class="card border-0">
+      <div class="card-body ps-0 ps-lg-3">
+        <h3 class="card-title"><%= product.productName %></h3>
+        <p class="card-text">
+          <strong>Category:</strong> <%= product.category %>
+        </p>
+        <p class="card-text">
+          <strong>Condition:</strong> 
+          <span class="badge bg-info"><%= product.condition %></span>
+        </p>
+        <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
+        <p class="card-text"><strong>Price:</strong> ₹ <%= product.price.toLocaleString("en-IN") %></p>
+        <p class="card-text"><small class="text-muted">Listed: <%= product.createdAt.toLocaleDateString() %></small></p>
+        <br/>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-primary buy" <%= product.isSold ? "disabled" : "true" %>>Buy</button>
+        </div><br>
+
+        <a href="/products/<%= product._id %>/edit" class="btn btn-primary">Edit</a>
+
+        <form method="POST" action="/products/<%=product._id%>?_method=DELETE" style="display:inline;">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

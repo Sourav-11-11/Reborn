@@ -1,0 +1,126 @@
+<% layout("/layouts/boilerplate") %>
+  <br>
+  <h3 class="fw-bold text-center mb-4">
+    Give It a Second Life
+    <i class="fa-solid fa-heart"></i>
+  </h3> 
+  <br>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Sell Your Product</h3><br/>
+    <form method="POST" action="/products" novalidate class="needs-validation">
+      <div class="mb-3">
+        <label for="productName" class="form-label">Product Name:</label>
+        <input 
+            name="product[productName]" 
+            placeholder="e.g., Vintage Leather Jacket" 
+            type="text"
+            class="form-control"
+            required 
+        />
+        <div class="valid-feedback">Product name looks good!</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="category" class="form-label">Category:</label>
+          <select 
+            name="product[category]" 
+            class="form-control" 
+            required
+          >
+            <option value="">Select a category</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Accessories">Accessories</option>
+            <option value="Home">Home & Decor</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Books">Books</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="invalid-feedback">Please select a category.</div>
+        </div>
+
+        <div class="mb-3 col-md-6">
+          <label for="condition" class="form-label">Condition:</label>
+          <select 
+            name="product[condition]" 
+            class="form-control" 
+            required
+          >
+            <option value="">Select condition</option>
+            <option value="New">New</option>
+            <option value="Like New">Like New</option>
+            <option value="Used">Used</option>
+          </select>
+          <div class="invalid-feedback">Please select the condition.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea
+          name="product[description]"
+          placeholder="Describe the product condition, size, brand, etc."
+          rows="4"
+          cols="50"
+          class="form-control"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a description.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Image URL:</label>
+        <input
+          name="product[image]"
+          placeholder="https://example.com/image.jpg"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Price (₹):</label>
+        <input 
+          name="product[price]" 
+          placeholder="Enter price" 
+          type="number" 
+          step="0.01"
+          class="form-control" 
+          required
+        />
+        <div class="invalid-feedback">Price should be valid</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="isSold" class="form-label">
+          <input type="checkbox" name="product[isSold]" value="on" />
+          Mark as Sold
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary add-btn">List Product</button>
+      <br/><br/>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Bootstrap form validation
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      let forms = document.querySelectorAll('.needs-validation');
+      Array.prototype.slice.call(forms).forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
