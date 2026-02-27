@@ -1,3 +1,21 @@
+/* SOLD Badge Overlay for Product Cards */
+.sold-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+.sold-badge {
+    font-size: 2.2rem;
+    padding: 0.8em 1.5em;
+    letter-spacing: 0.1em;
+}
 /* Base */
 
 body {
@@ -199,7 +217,6 @@ body {
 
 .about-section {
     padding: 4rem 1rem;
-   
 }
 
 .about-grid {
@@ -280,6 +297,78 @@ body {
     font-weight: bold;
 }
 
+/* Donate Mission Section */
+/* Connected Donate Section */
+
+.donate-section {
+  padding: 100px 0;
+  background: linear-gradient(to bottom, #ffffff, #f4f6f8);
+}
+
+.donate-text-area {
+  padding: 20px;
+}
+
+.donate-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.donate-text {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.donate-points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.donate-mission-btn {
+  background-color: #3CB371;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.donate-mission-btn:hover {
+  background-color: #2e8b57;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.donate-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.donate-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  max-width: 400px;
+  text-align: center;
+}
+
+.donate-card h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.donate-card p {
+  color: #666;
+  line-height: 1.6;
+}
 
 /* Forms */
 
@@ -436,4 +525,68 @@ body {
     color: #9e9e9e;
 }
 
+.alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
 
+.card {
+    border: 2px solid #ffc107;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Shared Section Title */
+.section-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Donation Section */
+.donation-section {
+  background-color: #ffffff;
+}
+
+.donation-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.9;
+}
+
+.donation-list li::before {
+  content: "✔";
+  color: #198754;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.donation-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.donation-icon-wrapper i {
+  font-size: 100px !important;
+  color: #333 !important;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Green CTA Section */
+.cta-green-section {
+  background: linear-gradient(135deg, #198754, #157347);
+  border-radius: 12px;
+  margin: 60px auto;
+}
+
+.cta-green-section .btn {
+  transition: 0.3s ease;
+}
+
+.cta-green-section .btn:hover {
+  transform: translateY(-3px);
+}

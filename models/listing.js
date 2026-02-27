@@ -31,9 +31,16 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    isSold: {
+    sold: {
         type: Boolean,
         default: false
+    },
+    seller: {
+        type: String,
+        default: "Sourav"
+    },
+    contactNumber: {
+        type: String
     },
     createdAt: {
         type: Date,

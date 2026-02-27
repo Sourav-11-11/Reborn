@@ -2,20 +2,15 @@
 <div class="row mt-3 mb-5">
   <div class="col-12 mb-3">
     <h3>Product Details</h3>
-    
-    <% if (product.isSold) { %>
-      <div class="alert alert-warning" role="alert">
-        <strong>Sold!</strong> This product has already been sold.
-      </div>
+    <% if (product.sold) { %>
+      <span class="badge bg-danger fs-5">Sold</span>
     <% } %>
   </div>
-
   <div class="col-12 col-lg-6">
     <div class="card border-0">
       <img src="<%= product.image %>" class="show-img" alt="product image">
     </div>
   </div>
-
   <div class="col-12 col-lg-6">
     <div class="card border-0">
       <div class="card-body ps-0 ps-lg-3">
@@ -24,23 +19,55 @@
           <strong>Category:</strong> <%= product.category %>
         </p>
         <p class="card-text">
-          <strong>Condition:</strong> 
+          <strong>Condition:</strong>
           <span class="badge bg-info"><%= product.condition %></span>
         </p>
         <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
         <p class="card-text"><strong>Price:</strong> ₹ <%= product.price.toLocaleString("en-IN") %></p>
+        <p class="card-text"><strong>Seller:</strong> <%= product.seller %></p>
         <p class="card-text"><small class="text-muted">Listed: <%= product.createdAt.toLocaleDateString() %></small></p>
         <br/>
+        <br/>
 
-        <div class="d-flex gap-2">
-          <button class="btn btn-primary buy" <%= product.isSold ? "disabled" : "true" %>>Buy</button>
-        </div><br>
+        <!-- BUY / INTEREST SECTION -->
+        <% if (!product.sold && !showSeller) { %>
+          <a href="/products/<%= product._id %>/interested" class="btn btn-success mb-3">Interested to Buy</a>
+        <% } %>
 
-        <a href="/products/<%= product._id %>/edit" class="btn btn-primary">Edit</a>
+        <!-- SELLER DETAILS -->
+        <% if (showSeller) { %>
+          <div class="card border-success shadow-sm mb-4">
+            <div class="card-header bg-success text-white">Seller Details</div>
+            <div class="card-body">
+              <p class="mb-1"><strong>Name:</strong> <%= product.seller %></p>
+              <p class="mb-1"><strong>Degree:</strong> BTech – 3rd Year</p>
+              <p class="mb-1"><strong>Phone:</strong> XXXXXX</p>
+              <p class="mb-0"><strong>Email:</strong> xxxxxx@gmail.com</p>
+            </div>
+          </div>
+        <% } %>
+      
 
-        <form method="POST" action="/products/<%=product._id%>?_method=DELETE" style="display:inline;">
-          <button class="btn btn-danger">Delete</button>
-        </form>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <hr/>
+        <!-- ADMIN ACTIONS -->
+        <div class="d-flex flex-wrap gap-2 mt-3">
+          <a href="/products/<%= product._id %>/edit" class="btn btn-outline-primary">Edit</a>
+          <form method="POST" action="/products/<%= product._id %>?_method=DELETE">
+            <button class="btn btn-outline-danger">Delete</button>
+          </form>
+          <% if (product.sold) { %>
+            <form method="POST" action="/products/<%= product._id %>/unsold?_method=PATCH">
+              <button class="btn btn-outline-warning">Mark as Unsold</button>
+            </form>
+          <% } else { %>
+            <form method="POST" action="/products/<%= product._id %>/buy?_method=PATCH">
+              <button class="btn btn-outline-success">Mark as Sold</button>
+            </form>
+          <% } %>
+
+
+        </div>
       </div>
     </div>
   </div>

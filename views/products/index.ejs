@@ -18,8 +18,10 @@
             <div class="card h-100 product-card">
               <div class="product-image-container">
                 <img src="<%= product.image %>" class="card-img-top" alt="<%= product.productName %>">
-                <% if (product.isSold) { %>
-                  <div class="sold-overlay"><span class="sold-badge">SOLD</span></div>
+                <% if (product.sold) { %>
+                  <div class="sold-overlay">
+                    <span class="badge bg-danger sold-badge">SOLD</span>
+                  </div>
                 <% } %>
                 <span class="condition-badge <%= product.condition.toLowerCase().replace(/\s+/g,'-') %>"><%= product.condition %></span>
               </div>

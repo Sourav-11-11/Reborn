@@ -25,7 +25,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
   res.render("home");
@@ -35,6 +34,18 @@ app.get("/", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about");
   
+});
+
+//donate route
+app.get("/donate", (req, res) => {
+  res.render("donate");
+});
+
+//donate create route
+app.post("/donate", async (req, res) => {
+  const donation = new Product(req.body.product);
+  await donation.save();
+  res.render("donate-thank-you");
 });
 
 //index route
@@ -55,7 +66,7 @@ app.get("/products/:id", async (req, res) => {
   if (!product) {
     return res.send("Product not found");
   }
-  res.render("products/show", { product });
+  res.render("products/show", { product, showSeller: false });
 });
 
 
@@ -80,6 +91,47 @@ app.put("/products/:id", async (req, res) => {
   res.redirect(`/products/${id}`);
 });
 
+// Interested to Buy Route
+app.get("/products/:id/interested", async (req, res) => {
+  let { id } = req.params;
+  const product = await Product.findById(id);
+  if (!product) {
+    return res.send("Product not found");
+  }
+  res.render("products/show", { product, showSeller: true });
+});
+
+// Mark as Sold Route
+app.patch("/products/:id/buy", async (req, res) => {
+  let { id } = req.params;
+  const product = await Product.findById(id);
+
+  if (!product) {
+    return res.send("Product not found");
+  }
+
+  product.sold = true;
+  await product.save();
+
+  res.redirect(`/products/${id}`);
+});
+
+// Mark as Unsold Route
+app.patch("/products/:id/unsold", async (req, res) => {
+  let { id } = req.params;
+  const product = await Product.findById(id);
+
+  if (!product) {
+    return res.send("Product not found");
+  }
+
+  product.sold = false;
+  await product.save();
+
+  res.redirect(`/products/${id}`);
+});
+
+
 //delete route
 app.delete("/products/:id", async (req, res) => {
   let { id } = req.params;
@@ -99,7 +151,8 @@ app.delete("/products/:id", async (req, res) => {
 //     condition: "Like New",
 //     description: "Classic vintage denim jacket",
 //     price: 25,
-//     isSold: false
+//     isSold: false,
+//     seller: "Sourav"
 //     });
 
 //     await sampleProduct.save();
