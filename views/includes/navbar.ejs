@@ -1,33 +1,22 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-  <div class="container-fluid px-4">
-
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="/">
-      <i class="fa-solid fa-recycle"></i>
-      ReBorn
+<nav class="fixed top-0 w-full z-50 bg-[#f9f9fb]/80 backdrop-blur-xl shadow-[0px_20px_40px_rgba(45,51,56,0.06)]">
+  <div class="flex justify-between items-center px-6 md:px-8 py-4 md:py-6 w-full max-w-[1440px] mx-auto">
+    <a href="/" class="flex items-center gap-2 text-on-surface hover:opacity-80 transition-opacity">
+      <span class="material-symbols-outlined text-2xl">recycling</span>
+      <span class="text-2xl md:text-3xl font-black tracking-tighter text-[#2d3338]">ReBorn</span>
     </a>
-
-    <button 
-        class="navbar-toggler" 
-        type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarNavAltMarkup"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-      <div class="navbar-nav gap-3 align-items-center">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/about">About</a>
-        <a class="nav-link" href="/products">Browse</a>
-        <a class="nav-link" href="/products/new">Sell</a>
-        <a class="nav-link" href="/donate">Donate</a>
-
-        <a class="nav-link ms-3" href="#" title="Profile">
-          <i class="fa-solid fa-circle-user" style="font-size: 1.5rem;"></i>
-        </a>
-      </div>
+    
+    <div class="hidden md:flex items-center gap-8">
+      <a class="text-[#005dbc] font-bold text-sm" href="/">Home</a>
+      <a class="text-[#596065] hover:bg-[#dde3e9]/50 transition-colors px-3 py-1 rounded-lg text-sm" href="/about">About</a>
+      <a class="text-[#596065] hover:bg-[#dde3e9]/50 transition-colors px-3 py-1 rounded-lg text-sm" href="/products">Browse</a>
+      <a class="text-[#596065] hover:bg-[#dde3e9]/50 transition-colors px-3 py-1 rounded-lg text-sm" href="/products/new">Sell</a>
+      <a class="text-[#596065] hover:bg-[#dde3e9]/50 transition-colors px-3 py-1 rounded-lg text-sm" href="/donate">Donate</a>
     </div>
 
+    <div class="flex items-center gap-4">
+      <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center hover:bg-surface-variant transition-colors text-on-surface text-decoration-none">
+        <span class="material-symbols-outlined">person</span>
+      </a>
+    </div>
   </div>
 </nav>

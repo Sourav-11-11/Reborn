@@ -1,62 +1,270 @@
 <% layout("/layouts/boilerplate") %>
 
-<div class="reborn-hero">
-  <div class="reborn-content d-flex flex-column justify-content-center align-items-end">
-    <div class="reborn-title">ReBorn</div>
-    <div class="reborn-caption">Give Your Stuff a Second Life
-        <br> List your item now and let someone love <i class="fa-solid fa-heart"></i> it again. </div>
-       
-    <div class="reborn-buttons text-center mt-4">
-
-      <div class="d-flex justify-content-center gap-4 flex-wrap mb-3">
-        <a href="/products" class="btn btn-lg btn-outline-light px-4 rounded-pill">Browse Products</a>
-        <a href="/products/new" class="btn btn-lg btn-outline-light px-4 rounded-pill shadow-sm">Sell a Product        </a>
+<!-- Hero Section -->
+<section class="w-full min-h-screen pt-0 pb-0 px-6 lg:px-8 flex items-center bg-gradient-to-b from-white to-surface-container-low/30">
+  <div class="max-w-[1440px] mx-auto w-full">
+    <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
+    <!-- Left Copy -->
+    <div class="space-y-8 text-center lg:text-left">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-tertiary-container/10 text-tertiary rounded-full mx-auto lg:mx-0 animate-fade-in-up">
+        <span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+        <span class="text-[10px] font-bold uppercase tracking-[0.05em]">Curated for the conscious</span>
       </div>
-
-     </div>
-  </div>
-</div>
-
-<section class="donate-section">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-md-6 donate-text-area">
-        <h2 class="donate-title">
-          Your Unused Clothes Can Change Someone’s Life
-        </h2>
-
-        <p class="donate-text">
-          That jacket sitting in your closet could mean warmth.
-          Those clothes you haven’t worn in years could restore confidence.
-        </p>
-
-        <p class="donate-text">
-          When you donate through ReBorn, you’re not just clearing space —
-          you’re giving someone dignity, opportunity, and hope.
-        </p>
-
-        <div class="donate-points">
-          <span>♻  Reduce waste</span>
-          <span>❤️ Support people in need</span>
-          <span>🌍 Make real impact</span>
-        </div>
-
-        <a href="/donate" class="btn btn-dark btn-lg mt-4">
-          Start Donating Today
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black editorial-display text-on-surface tracking-tighter animate-fade-in-up delay-100">
+        Give Your Stuff <br class="hidden md:block"/> a <span class="text-tertiary">Second Life</span>
+      </h1>
+      <p class="text-base sm:text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed text-balance mx-auto lg:mx-0 animate-fade-in-up delay-200">
+        List your item now and let someone love it again. Join a community built on circular fashion and intentional discovery.
+      </p>
+      <div class="flex flex-col sm:flex-row flex-wrap gap-4 pt-2 md:pt-4 justify-center lg:justify-start animate-fade-in-up delay-300">
+        <a href="/products" class="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-br from-primary to-primary-dim text-white rounded-xl font-bold transition-transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20 text-center text-sm md:text-base">
+          Browse Products
+        </a>
+        <a href="/products/new" class="px-6 md:px-8 py-3 md:py-4 bg-surface-container-highest text-on-surface rounded-xl font-bold transition-transform hover:scale-[1.02] active:scale-95 text-center text-sm md:text-base">
+          Sell a Product
         </a>
       </div>
+    </div>
+    
+    <!-- Right Imagery -->
+    <div class="relative hidden sm:block">
+      <div class="absolute -inset-10 bg-tertiary-container/20 blur-[100px] rounded-full z-0"></div>
+      <div class="relative z-10 grid grid-cols-2 gap-4">
+        <div class="space-y-3 md:space-y-4 pt-8 md:pt-12">
+          <div class="rounded-2xl overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-500 group">
+            <a href="/products" class="block w-full h-full relative">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="bg-white/90 text-on-surface text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">View</span>
+                </div>
+                <img class="w-full h-[200px] md:h-[280px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhQ1OQ8dzm9-DerR6yXVblSe0DrAwGG8apiCpZudgIA3sd1mIgIjsXyUucfKKmjDla16pjLNjvwixuUWqJTEhX5oOUwEdjOCuxfn8X9_S_Sw9MCZ_8k45yJMczeHPfaG6iIl0QVONTTOZapiE8xaP9GLP3VYh-hMkVJrF_mJ2TdwDaqiWW8IXIp0vk7_28GFQId_SgEo-sr_mDRdXhPsHYxdxK6VbbCAJAHBO1c6zI1YKRmWnOOmFZwXGZWVgy8QOQOQyjayxYuFg" alt="Denim Jacket"/>
+            </a>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-500 delay-75 group">
+            <a href="/products" class="block w-full h-full relative">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="bg-white/90 text-on-surface text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">View</span>
+                </div>
+                <img class="w-full h-[160px] md:h-[220px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVdk6VnDYN8t-MrU7rVtAga5rF638wZitvLQJs2zyG3m76pApnBRtzCSD6L-tqXJuDQKD1x7ssXHJjTx0-jeO3ZU6V_RNKv9UJ69CFyU8FOC1COEhuVJL99rxhJ_IlA_8RrGVEAz9dpQxwCNPRMY9HrV1hDYP_55FBFrIA5UtveLzzS0n3AHt7a_N3qMQmU-uXfftgJdVO1TEWfoLujbLATiIhnhCEXJYdCF_cVArfW6WZuTbCcp_lgX49OSLxFn6GSb3SeOoGqfg" alt="Sneakers"/>
+            </a>
+          </div>
+        </div>
+        <div class="space-y-3 md:space-y-4">
+          <div class="rounded-2xl overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-500 delay-100 group">
+            <a href="/products" class="block w-full h-full relative">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="bg-white/90 text-on-surface text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">View</span>
+                </div>
+                <img class="w-full h-[220px] md:h-[300px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7tzL5ztcJU7utdLC0FN_KoEH_-egnBtvtPeuQ0Vr97ihwoKwiyPA_BEkZAOJRv5HYurI_TyqZjPrNug-hlL0F6jZMjGS__rU8d6VUhc14Kv5vd-DemqVBGlfO81HqAUE8E7on9Lp3PNrAou7VDvQuZd5qD-ndXXfHGiHe076NPqrNIJNpHdOfAlunYA2ymJloyV3k8e_eR0HT8-5HVhI3pQU6eURBcdCqauSeC5GzxRIuw2hXe20Tpf9Rstb-AYJbuN44q_iH1jE" alt="Handbag"/>
+            </a>
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-2xl transition-transform hover:-translate-y-2 duration-500 delay-150 group">
+            <a href="/products" class="block w-full h-full relative">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors z-10 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <span class="bg-white/90 text-on-surface text-xs font-bold px-3 py-1 rounded-full backdrop-blur-sm">View</span>
+                </div>
+                <img class="w-full h-[280px] md:h-[380px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEu-fC_wuC5cZ86D-zFG6MQe_Z_HbeY8IYltrjTNJzio_xrOfthibSvYiK_dYwHqCzbgekqpmPjQDPR0cl1JuVw0uQ2l8tbIP7kjwHuLywDaqD148c0dvIrg62m7QxMUsjHtlwyygzbZlfN8kbHAdhvgmuzXgkwUdZTbci1Keo6Dce7COOJTavSLD2KIElCL4bO8L8cYED9qxL-aT4_wl_VFGVtnAW5DXbyUQ5U19io9CLbOr2J7I5Eakz8Si__X2RQsOh4Ukg-VQ" alt="Watch"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="col-md-6 donate-visual">
-        <div class="donate-card">
-          <h4>Small Action. Big Difference.</h4>
-          <p>
-            Every item you donate helps someone stay warm,
-            feel confident, and move forward.
+<!-- Donating Section / Storytelling -->
+<section class="w-full min-h-fit py-0 px-6 lg:px-8 bg-gradient-to-b from-surface-container-low/30 to-surface-container-low/20">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="bg-surface-container-low rounded-none md:rounded-[2.5rem] p-6 md:p-10 lg:p-16 text-center">
+      <div class="max-w-3xl mx-auto space-y-4 md:space-y-5">
+        <span class="text-[10px] font-bold uppercase tracking-[0.05em] text-tertiary">Our Mission</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black editorial-display tracking-tight text-on-surface">Small Action.<br/>Big Difference.</h2>
+        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed text-balance">
+        Choosing second-hand isn't just about style—it's about impact. Every item listed on ReBorn extends the lifecycle of quality craftsmanship, reducing water waste and carbon footprints one beautiful piece at a time.
+      </p>
+      
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 py-6 md:py-10">
+          <div class="space-y-2">
+            <div class="text-3xl md:text-4xl font-black text-tertiary">92M</div>
+            <div class="text-[9px] md:text-[10px] font-bold uppercase text-outline-variant">Tons Waste/Year</div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl md:text-4xl font-black text-tertiary">20%</div>
+            <div class="text-[9px] md:text-[10px] font-bold uppercase text-outline-variant">Global Wastewater</div>
+          </div>
+          <div class="space-y-2">
+            <div class="text-3xl md:text-4xl font-black text-tertiary">85%</div>
+            <div class="text-[9px] md:text-[10px] font-bold uppercase text-outline-variant">Textiles Landfill</div>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <a href="/donate" class="inline-block px-6 md:px-8 py-3 md:py-4 bg-tertiary text-white rounded-xl font-bold transition-transform hover:-translate-y-1 active:scale-95 shadow-lg shadow-tertiary/25 text-sm md:text-base">
+            Start Donating Today
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why ReBorn Matters Section -->
+<section class="w-full min-h-screen py-0 px-6 lg:px-8 flex flex-col items-center justify-start pt-12 md:pt-16 lg:pt-20 bg-gradient-to-b from-surface-container-low/20 to-surface-container-low/30">
+  <div class="max-w-[1440px] mx-auto w-full relative">
+    <div class="relative bg-gradient-to-br from-white/50 to-white/30 rounded-none md:rounded-[3rem] p-8 md:p-12 lg:p-16 border border-outline/10 overflow-hidden shadow-lg shadow-outline/5">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-outline/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-outline/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <i class="fa-solid fa-recycle text-tertiary text-xl"></i>
+        <span class="text-xs font-bold uppercase tracking-widest text-tertiary">Impact Driven</span>
+      </div>
+      
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-black editorial-display mb-4 md:mb-5 text-on-surface leading-tight text-center">Why ReBorn Matters</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+        <div class="text-center p-6 md:p-7 rounded-2xl bg-white/70 backdrop-blur-md border border-white/40 hover:bg-white/80 transition-all shadow-lg shadow-white/10">
+          <div class="text-2xl md:text-3xl font-black text-tertiary mb-2 md:mb-3">9</div>
+          <p class="text-xs md:text-sm text-on-surface font-semibold leading-snug">months to extend<br/>item lifespan by<br/><span class="text-tertiary">50%</span></p>
+        </div>
+        <div class="text-center p-6 md:p-7 rounded-2xl bg-white/70 backdrop-blur-md border border-white/40 hover:bg-white/80 transition-all shadow-lg shadow-white/10">
+          <div class="text-2xl md:text-3xl font-black text-secondary mb-2 md:mb-3">92M</div>
+          <p class="text-xs md:text-sm text-on-surface font-semibold leading-snug">tons waste<br/>produced<br/><span class="text-secondary">annually</span></p>
+        </div>
+        <div class="text-center p-6 md:p-7 rounded-2xl bg-white/70 backdrop-blur-md border border-white/40 hover:bg-white/80 transition-all shadow-lg shadow-white/10">
+          <div class="text-2xl md:text-3xl font-black text-error mb-2 md:mb-3">80%</div>
+          <p class="text-xs md:text-sm text-on-surface font-semibold leading-snug">items end up<br/>in landfills<br/><span class="text-error">yearly</span></p>
+        </div>
+      </div>
+      
+      <div class="bg-gradient-to-br from-white/60 to-tertiary/5 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 border border-white/30 shadow-lg shadow-tertiary/5 mb-6 md:mb-8">
+        <div class="max-w-3xl mx-auto space-y-0">
+          <p class="text-base md:text-lg text-on-surface leading-relaxed font-light tracking-wide text-center py-0">
+            Global waste is a <span class="text-tertiary font-medium">critical environmental challenge</span>.
+          </p>
+          <div class="h-0.5 w-8 bg-gradient-to-r from-transparent via-tertiary/30 to-transparent mx-auto my-0.5"></div>
+          <p class="text-sm md:text-base text-on-surface leading-relaxed font-light text-center italic py-0">
+            ReBorn makes secondhand items <span class="text-tertiary font-medium not-italic">accessible, affordable, and sustainable</span>.
           </p>
         </div>
       </div>
 
+      <div class="flex flex-col sm:flex-row gap-2 md:gap-3 justify-center mb-8 md:mb-10 lg:mb-12">
+        <a href="/products/new" class="inline-flex items-center justify-center px-5 md:px-6 py-2 md:py-3 bg-tertiary text-white rounded-xl font-bold shadow-lg shadow-tertiary/25 hover:shadow-xl hover:-translate-y-1 transition-all gap-2 text-xs md:text-sm">
+          <i class="fa-solid fa-plus"></i> Start Selling
+        </a>
+        <a href="/donate" class="inline-flex items-center justify-center px-5 md:px-6 py-2 md:py-3 bg-white text-tertiary border border-tertiary/30 rounded-xl font-bold hover:bg-tertiary/5 transition-all gap-2 text-xs md:text-sm">
+          <i class="fa-solid fa-heart"></i> Donate Now
+        </a>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- How ReBorn Works Section -->
+<section class="w-full min-h-fit py-0 px-6 lg:px-8 bg-gradient-to-b from-surface-container-low/30 to-surface-container-low/20">
+  <div class="max-w-[1440px] mx-auto pt-8 md:pt-12 lg:pt-16">
+    <div class="text-center mb-12 md:mb-20 lg:mb-24 relative">
+      <span class="text-xs font-bold uppercase tracking-widest text-tertiary mb-2 block animate-fade-in-up">Simple & Seamless</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black editorial-display text-on-surface mb-4 md:mb-6 animate-fade-in-up delay-100">How It Works</h2>
+      <p class="text-base md:text-lg lg:text-xl text-on-surface-variant max-w-2xl mx-auto animate-fade-in-up delay-200">From your closet to a new home in three easy steps.</p>
+    </div>
+
+    <div class="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+    <!-- Connecting Line (Desktop) -->
+    <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent -translate-y-12 -z-10"></div>
+
+    <!-- Step 1 -->
+    <div class="group relative flex flex-col items-center text-center p-6 md:p-8">
+      <div class="relative w-24 md:w-32 h-24 md:h-32 mb-6 md:mb-8 transition-transform duration-500 hover:scale-110">
+        <div class="absolute inset-0 bg-secondary-container rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative w-full h-full bg-white rounded-full border border-outline-variant/10 shadow-xl flex items-center justify-center text-3xl md:text-4xl text-tertiary">
+          <i class="fa-solid fa-camera"></i>
+        </div>
+        <div class="absolute -top-2 -right-2 w-8 md:w-10 h-8 md:h-10 bg-tertiary text-white rounded-full flex items-center justify-center font-bold text-sm md:text-lg border-4 border-white">1</div>
+      </div>
+      <h3 class="text-base md:text-lg font-bold text-on-surface mb-2 md:mb-3">Snap & List</h3>
+      <p class="text-sm md:text-base text-on-surface-variant leading-relaxed max-w-xs">
+        Take a photo, add details, and set your price. It takes less than 60 seconds.
+      </p>
+      
+      <!-- Arrow Mobile -->
+      <div class="md:hidden text-outline-variant/30 text-2xl md:text-3xl mt-6 md:mt-8 animate-bounce">
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="group relative flex flex-col items-center text-center p-6 md:p-8">
+      <div class="relative w-24 md:w-32 h-24 md:h-32 mb-6 md:mb-8 transition-transform duration-500 hover:scale-110">
+        <div class="absolute inset-0 bg-secondary-container rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative w-full h-full bg-white rounded-full border border-outline-variant/10 shadow-xl flex items-center justify-center text-3xl md:text-4xl text-tertiary">
+          <i class="fa-solid fa-comments"></i>
+        </div>
+        <div class="absolute -top-2 -right-2 w-8 md:w-10 h-8 md:h-10 bg-tertiary text-white rounded-full flex items-center justify-center font-bold text-sm md:text-lg border-4 border-white">2</div>
+      </div>
+      <h3 class="text-base md:text-lg font-bold text-on-surface mb-2 md:mb-3">Connect</h3>
+      <p class="text-sm md:text-base text-on-surface-variant leading-relaxed max-w-xs">
+        Interested buyers will contact you directly to discuss details. No middleman needed.
+      </p>
+
+      <!-- Arrow Mobile -->
+      <div class="md:hidden text-outline-variant/30 text-2xl md:text-3xl mt-6 md:mt-8 animate-bounce">
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="group relative flex flex-col items-center text-center p-6 md:p-8">
+      <div class="relative w-24 md:w-32 h-24 md:h-32 mb-6 md:mb-8 transition-transform duration-500 hover:scale-110">
+        <div class="absolute inset-0 bg-secondary-container rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+        <div class="relative w-full h-full bg-white rounded-full border border-outline-variant/10 shadow-xl flex items-center justify-center text-3xl md:text-4xl text-tertiary">
+          <i class="fa-solid fa-handshake-simple"></i>
+        </div>
+        <div class="absolute -top-2 -right-2 w-8 md:w-10 h-8 md:h-10 bg-tertiary text-white rounded-full flex items-center justify-center font-bold text-sm md:text-lg border-4 border-white">3</div>
+      </div>
+      <h3 class="text-base md:text-lg font-bold text-on-surface mb-2 md:mb-3">Exchange</h3>
+      <p class="text-sm md:text-base text-on-surface-variant leading-relaxed max-w-xs">
+        Meet up or arrange delivery to hand over the item and close the deal.
+      </p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community / Newsletter Section -->
+<section class="w-full min-h-fit py-0 px-6 lg:px-8 bg-gradient-to-b from-surface-container-low/20 to-surface-container-low/30">
+    <div class="max-w-[1440px] mx-auto pt-6 md:pt-8 lg:pt-10 mb-6 md:mb-8 lg:mb-10">
+      <div class="relative bg-gradient-to-br from-white/50 to-white/30 rounded-none md:rounded-[3rem] p-6 md:p-8 lg:p-12 text-center overflow-hidden group outline outline-1 outline-outline/10">
+          <!-- Subtle gradients for gradient background -->
+          <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-outline/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-outline/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+          
+          <div class="relative z-10 max-w-2xl mx-auto space-y-3 md:space-y-4">
+              <span class="inline-block py-0.5 px-3 rounded-full bg-outline/10 backdrop-blur-md border border-outline/20 text-xs font-bold uppercase tracking-widest mb-1 md:mb-2 text-outline-variant">
+                Community
+              </span>
+              <h2 class="text-2xl md:text-3xl lg:text-4xl font-black editorial-display tracking-tight text-on-surface mb-1 md:mb-2">
+                Stay Connected.
+              </h2>
+              <p class="text-sm md:text-base text-on-surface-variant leading-relaxed font-medium text-balance max-w-xl mx-auto">
+                  Be the first to know about new drops, sustainability tips, and community events.
+              </p>
+              
+              <form class="flex flex-col sm:flex-row gap-2 md:gap-3 max-w-sm mx-auto pt-3 md:pt-4 relative" onsubmit="event.preventDefault(); this.reset(); alert('Thanks for joining!');">
+                  <input type="email" placeholder="Your email address" class="flex-1 px-4 md:px-5 py-2 md:py-3 rounded-full bg-surface-bright border border-outline/10 text-on-surface placeholder-on-surface-variant focus:outline-none focus:bg-surface focus:border-outline/30 transition-all text-xs md:text-sm" required>
+                  <button type="submit" class="px-5 md:px-6 py-2 md:py-3 bg-on-surface text-white font-bold rounded-full hover:bg-on-surface/90 active:scale-95 transition-all shadow-lg shadow-on-surface/20 text-xs md:text-sm whitespace-nowrap">
+                      Subscribe
+                  </button>
+              </form>
+              
+              <div class="pt-3 md:pt-4 flex items-center justify-center gap-4 md:gap-6 text-outline-variant text-lg md:text-xl">
+                  <a href="#" class="hover:text-tertiary hover:scale-110 transition-all duration-300"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" class="hover:text-tertiary hover:scale-110 transition-all duration-300"><i class="fa-brands fa-tiktok"></i></a>
+                  <a href="#" class="hover:text-tertiary hover:scale-110 transition-all duration-300"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+    </div>
 </section>

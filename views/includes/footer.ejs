@@ -1,29 +1,38 @@
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
+<footer class="w-full mt-auto bg-[#f2f4f6] dark:bg-[#0a0a0a] py-16 px-8 flex flex-col md:flex-row justify-between items-center gap-8 mb-24 md:mb-0">
+  <div class="flex flex-col items-center md:items-start gap-4">
+    <span class="text-xl font-black tracking-tighter text-on-surface">ReBorn</span>
+    <p class="font-['Inter'] text-xs tracking-wide uppercase text-[#596065]">© 2026 ReBorn. Curating the secondary market.</p>
+  </div>
+  
+  <div class="flex flex-wrap justify-center gap-8">
+    <a class="font-['Inter'] text-xs tracking-wide uppercase text-[#596065] hover:text-[#2d3338] underline decoration-[#005dbc] decoration-2 underline-offset-4 transition-all" href="/about">About</a>
+    <a class="font-['Inter'] text-xs tracking-wide uppercase text-[#596065] hover:text-[#2d3338] underline decoration-[#005dbc] decoration-2 underline-offset-4 transition-all" href="/products">Browse</a>
+    <a class="font-['Inter'] text-xs tracking-wide uppercase text-[#596065] hover:text-[#2d3338] underline decoration-[#005dbc] decoration-2 underline-offset-4 transition-all" href="/donate">Donate</a>
+  </div>
 
-            <div class="footer-brand">
-                <h5>ReBorn</h5>
-                <p>Sustainable Thrifting Marketplace</p>
-            </div>
-
-            <div class="footer-links">
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/contact-us">Contact</a>
-            </div>
-
-            <div class="footer-socials">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            
-            © 2026 ReBorn. All rights reserved.
-        </div>
-    </div>
+  <div class="flex justify-center gap-6">
+    <a href="#" class="text-[#596065] hover:text-[#2d3338] transition-colors"><i class="fa-brands fa-facebook-f text-xl"></i></a>
+    <a href="#" class="text-[#596065] hover:text-[#2d3338] transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+    <a href="#" class="text-[#596065] hover:text-[#2d3338] transition-colors"><i class="fa-brands fa-x-twitter text-xl"></i></a>
+  </div>
 </footer>
+
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full h-20 bg-[#f9f9fb]/90 backdrop-blur-2xl flex justify-around items-center px-4 pb-safe z-50 border-t border-[#acb3b8]/15 shadow-[0px_-10px_40px_rgba(0,0,0,0.04)]">
+  <a href="/" class="flex flex-col items-center justify-center text-tertiary px-4 py-2 hover:opacity-80 transition-opacity">
+    <span class="material-symbols-outlined">home</span>
+    <span class="text-[10px] font-medium uppercase tracking-[0.05em] mt-1">Home</span>
+  </a>
+  <a href="/products" class="flex flex-col items-center justify-center text-[#596065] hover:opacity-80 transition-opacity">
+    <span class="material-symbols-outlined">grid_view</span>
+    <span class="text-[10px] font-medium uppercase tracking-[0.05em] mt-1">Browse</span>
+  </a>
+  <a href="/products/new" class="flex flex-col items-center justify-center text-[#596065] hover:opacity-80 transition-opacity">
+    <span class="material-symbols-outlined">add_circle</span>
+    <span class="text-[10px] font-medium uppercase tracking-[0.05em] mt-1">Sell</span>
+  </a>
+  <a href="/donate" class="flex flex-col items-center justify-center text-[#596065] hover:opacity-80 transition-opacity">
+    <span class="material-symbols-outlined">loyalty</span>
+    <span class="text-[10px] font-medium uppercase tracking-[0.05em] mt-1">Donate</span>
+  </a>
+</nav>
