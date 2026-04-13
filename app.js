@@ -36,20 +36,17 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Security Middleware
 app.use(helmet());
 
-// Rate limiting
 const generalLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100, // General requests limited to 100 per 15 minutes
+    max: 100,
     standardHeaders: true,
     legacyHeaders: false,
 });
 
-app.use(generalLimiter); // Apply to all routes
+app.use(generalLimiter);
 
-// Request size limits
 app.use(express.urlencoded({ extended: true, limit: "10kb" }));
 app.use(express.json({ limit: "10kb" }));
 app.use(methodOverride("_method"));
@@ -86,6 +83,16 @@ const { storage } = require("./cloudConfig.js");
 const multer = require("multer");
 const upload = multer({ storage });
 const wrapAsync = require("./utils/wrapAsync.js");
+
+// Diagnostic endpoint to verify static files are served
+app.get("/health", (req, res) => {
+  res.json({ 
+    status: "✅ Server running",
+    port: PORT,
+    mongo: "checking...",
+    environment: process.env.NODE_ENV || "development"
+  });
+});
 
 app.get("/", (req, res) => {
   res.render("home");
