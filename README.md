@@ -1,132 +1,129 @@
 <div align="center">
 
 # ♻️ ReBorn
-
-### *A smart circular marketplace platform — find and share pre-loved items*
+### *A Smart Circular Marketplace for Pre-Loved Items*
 
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![EJS](https://img.shields.io/badge/EJS-A91E50?style=for-the-badge&logo=ejs&logoColor=white)](https://ejs.co/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)](https://cloudinary.com/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 **[Live Demo](https://reborn-xqx7.onrender.com/) · [Report Bug](#) · [Request Feature](#)**
+<br><br>
+*(ReBorn tackles the linear "take-make-dispose" economy by making circular, sustainable trade effortless, scalable, and secure)*
 
 </div>
 
 ---
 
-## 📖 About The Project
+## 📖 The Origin Story
 
-**ReBorn** is a full-stack, responsive web application driving a local circular HTTP economy. Originally prototyped during the **Innoverse Hackathon at Woxsen University**, it has since been architected into a scalable, production-ready application. It provides users with a seamless interface to buy, sell, and donate pre-loved items, helping extend product lifecycles and significantly reduce landfill waste.
+**ReBorn** began as a late-night MVP during the **Innoverse Hackathon at Woxsen University**. What started as an ambitious concept to reduce campus waste quickly gained traction and won the judges over. Post-hackathon, I took the core idea and re-architected it from the ground up. 
 
-Recruiters and Engineers, this project showcases my abilites in backend architecture, security implementation, external API integrations, Docker containerization, and writing testable, production-ready code.
+The platform has since scaled to include **enterprise-grade security, comprehensive TDD with Jest, Docker containerization, and a highly resilient MVC architecture**—evolving from a standard university hackathon project into a robust, production-ready full-stack application.
 
-## 🚀 Key Engineering Highlights
+---
 
-Rather than just another CRUD app, ReBorn is built with an emphasis on production resilience:
+## ⚡ Core Engineering Features
 
-* **Robust Security Posture:** Integrated `Helmet.js` for strict HTTP headers (including custom CSP policies), enforced `express-rate-limit` for DDoS/brute-force mitigation on auth routes, and heavily sanitized all inputs via `Joi` middleware against NoSQL injection.
-* **Modern Authentication Flow:** Implemented secure session-based authentication utilizing `Passport.js` with local strategies, featuring stringent password strength algorithms and real-time duplicate email validations.
-* **Cloud File Processing:** Seamlessly integrated `Cloudinary` using `Multer-storage-cloudinary` to intercept, parse, compress, and remotely store user image uploads, keeping the core server lightweight.
-* **Tested & Reliable:** Backend business logic and Mongoose schema validations are covered by an automated `Jest` test suite comprising 16+ test cases.
-* **Containerized Deployment:** Fully Dockerized using optimized multi-stage Alpine Node images, making the app environment-agnostic and CI/CD ready.
+Recruiters & Engineers, here is what powers ReBorn under the hood:
 
-## 💻 Tech Stack & Architecture
+| Category | Description |
+|---|---|
+| **🔒 Security-First Design** | Hardened with **Helmet.js** (custom CSP directives), protected against brute-force with **express-rate-limit**, and strict request payload sizing limits (10kb). |
+| **🛡️ Data Integrity** | Complete server-side schema validation using **Joi** paired with **Mongoose** strict typing. Password strength algorithms and email duplicate checks are enforced at the DB level. |
+| **🔐 Authentication** | State-based cookie authentication using **Passport.js** (`passport-local`). Secure route architectures utilizing middleware for protected route blocking & ownership verification. |
+| **☁️ Media Engineering** | Optimized external cloud storage using **Cloudinary** & **Multer**. Streamlined multi-part form data processing with automatic format conversion for speed. |
+| **🐳 DevOps & Containerization** | **Dockerized** entirely configured via Dockerfile and deployed reliably on **Render.com**. Environment agnostic (`.env` abstracted logic). |
+| **🧪 Testing (TDD)** | Reliable business logic unit testing achieved with **Jest** and **Supertest**, ensuring core schemas, auth behavior, and error throwing work flawlessly. |
 
-Built entirely around the **MVC (Model-View-Controller)** paradigm using the MEN stack.
+---
 
-### Backend
-* **Runtime / Framework:** Node.js, Express.js
-* **Database:** MongoDB Atlas, Mongoose ORM
-* **Security:** Helmet, express-rate-limit, Joi, Passport.js, bcrypt
-* **Testing:** Jest, Supertest
+## 🛠️ Architecture & Tech Stack
 
-### Frontend
-* **Templating:** EJS (Embedded JavaScript) with layout blocks
-* **Styling:** Tailwind CSS, FontAwesome
+ReBorn strictly adheres to the **Model-View-Controller (MVC)** architectural pattern, separating data handling, business logic, and UI compilation.
 
-### DevOps & Tools
-* **Containerization:** Docker
-* **Hosting / CI Pipeline:** Render (Linked to GitHub)
-* **Cloud Storage:** Cloudinary API
+- **Frontend:** EJS (Server-Side Rendering), Tailwind CSS, Custom CSS animations, FontAwesome
+- **Backend:** Node.js, Express.js (v5 router patterns)
+- **Database:** MongoDB Atlas, Mongoose ORM
+- **Validation & Flow:** Joi (Schema Validation), Express-Session, Connect-Flash
 
-## ⚙️ Local Development Setup
+---
 
-To get a local development environment up and running, follow these steps:
+## ⚙️ Quick Start
 
 ### Prerequisites
-* [Node.js](https://nodejs.org/) (v18 or higher)
-* [MongoDB](https://www.mongodb.com/) (Local or Atlas GUI)
-* [Docker](https://www.docker.com/) (Optional, for containerized run)
+* [Node.js](https://nodejs.org/) (v18+)
+* [MongoDB](https://www.mongodb.com/) (Local or Atlas URL)
+* [Docker](https://www.docker.com/) *(Optional)*
 
-### Installation
+### Local Setup
 
-1. **Clone the repository**
+1. **Clone the Repository:**
    ```bash
    git clone https://github.com/Sourav-11-11/Reborn.git
    cd Reborn
    ```
 
-2. **Install dependencies**
+2. **Install Dependencies:**
    ```bash
    npm install
    ```
 
-3. **Configure Environment Variables**
-   Create a `.env` file in the root directory (use '.env.example' as a template):
-   ```env
-   ATLAS_URL=YOUR_MONGODB_CONNECTION_STRING
-   SECRET=YOUR_SECURE_SESSION_KEY
-   CLOUD_NAME=YOUR_CLOUDINARY_NAME
-   CLOUD_API_KEY=YOUR_CLOUDINARY_API_KEY
-   CLOUD_API_SECRET=YOUR_CLOUDINARY_API_SECRET
+3. **Configure Environment:**
+   Copy the sample environment file to `.env`:
+   ```bash
+   cp .env.example .env
    ```
+   *Populate the `.env` file with your `ATLAS_URL`, `SECRET`, and Cloudinary keys.*
 
-4. **Seed Database**
+4. **Initialize & Seed the Database:**
    ```bash
    npm run seed
    ```
 
-5. **Start Application**
+5. **Start Application:**
    ```bash
-   npm run dev    # Starts with nodemon for auto-reload
+   npm run dev    # Starts with Nodemon for hot relading
    npm start      # Standard production execution
    ```
 
-### 🐳 Docker Deployment
+### 🐳 Docker Native Deployment
 
-The application is completely containerized. If Docker is installed, you can skip native installation:
-
+Want to skip the local installations? Run the app directly inside a Docker container:
 ```bash
 docker build -t reborn .
 docker run -p 8000:8000 --env-file .env reborn
 ```
 
-## 🧪 Automated Testing
+---
 
-ReBorn utilizes **Jest** for testing API endpoints, error handling, and Joi data validation.
+## 🧪 Testing
 
-```bash
-npm test
-```
+To run the internal unit tests and verify schematic data integrity:
 
 ```bash
 npm test
 ```
 
-## 📈 Future Roadmap
+---
 
-- [ ] **Role-based Authorization:** Implement an Admin dashboard and moderation workflows.
-- [ ] **Real-time Messaging:** Enable buyer-seller communication via WebSockets.
-- [ ] **Payment Integration:** Secure transactions via Stripe or Razorpay.
-- [ ] **CI/CD Pipeline:** Automated testing and deployment with GitHub Actions.
+## 📈 Roadmap
+
+- [ ] **Role-Based Authorization:** Add super-admin and moderation dashboard routes.
+- [ ] **Real-time WebSockets:** Implement WebRTC/Socket.io messaging for buyer-seller direct comms.
+- [ ] **Payment Gateways:** Secure transactions integrating the Stripe API framework.
+- [ ] **CI/CD Integration:** Automate the Jest suite testing and deployments using GitHub Actions.
 
 ---
 
 <div align="center">
-  <b>Developed with 💚 by <a href="https://github.com/Sourav-11-11">Sourav Vemuru</a></b><br>
-  <i>If you found this project impressive, please consider giving it a ⭐!</i>
+  <b>Developed with 💚 and absolute dedication by <a href="https://github.com/Sourav-11-11">Sourav Vemuru</a></b><br>
+  <i>Full Stack Engineer | Solving complex logic with beautiful code.</i><br><br>
+  
+  **If you found this architecture, design, and project impressive, please consider hitting the ⭐️ button!**
 </div>
