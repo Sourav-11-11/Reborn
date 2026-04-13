@@ -1,132 +1,132 @@
 <div align="center">
-  <h1>♻️ ReBorn</h1>
-  <p><strong>A Modern Circular Marketplace for a Sustainable Future</strong></p>
+
+# ♻️ ReBorn
+
+### *A smart circular marketplace platform — find and share pre-loved items*
+
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)](https://cloudinary.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+
+**[Live Demo](https://reborn-xqx7.onrender.com/) · [Report Bug](#) · [Request Feature](#)**
+
 </div>
 
 ---
 
-## 🌍 The Why (Our Motivation)
-Global waste is a critical environmental challenge. Annually, **92M tons** of waste are produced, and **80%** of items end up in landfills. ReBorn tackles this crisis directly by shifting from a linear "take-make-dispose" economy to a circular one. We believe that extending the lifecycle of quality items reduces carbon footprints, making beautiful pieces accessible, affordable, and sustainable for everyone.
+## 📖 About The Project
 
-## 🚀 The What (Project Overview)
-**ReBorn** is a full-stack, responsive web application that enables users to effortlessly buy, sell, and donate pre-loved items. It offers a premium, modern user interface, giving second-hand shopping the sleek, trusted feel it deserves.
+**ReBorn** is a full-stack, responsive web application driving a local circular HTTP economy. Originally prototyped during the **Innoverse Hackathon at Woxsen University**, it has since been architected into a scalable, production-ready application. It provides users with a seamless interface to buy, sell, and donate pre-loved items, helping extend product lifecycles and significantly reduce landfill waste.
 
-### ✨ Key Features
-- **Seamless Market Exchange**: Curated interfaces to browse, buy, and sell second-hand products.
-- **Dedicated Donation Flow**: Easy-to-use interfaces to encourage charitable giving. 
-- **Modern UI/UX**: Premium design utilizing Tailwind CSS, Material Design 3 palettes, and fluid animations.
-- **Robust RESTful API**: Built strictly on REST conventions for intuitive and scalable backend routing.
-- **File Upload Integration**: Seamless image uploads utilizing Multer.
-- **MVC Architecture**: Organized, clean, and modular backend structural design.
+Recruiters and Engineers, this project showcases my abilites in backend architecture, security implementation, external API integrations, Docker containerization, and writing testable, production-ready code.
 
-## 🛠️ The How (Tech Stack)
-ReBorn is engineered with performance and scalability in mind using the **MEN stack** (MongoDB, Express, Node.js) with server-side rendering:
+## 🚀 Key Engineering Highlights
 
-* **Frontend**: EJS (Embedded JavaScript templates), Tailwind CSS
-* **Backend**: Node.js, Express.js, Helmet.js (Security), Rate Limiting
-* **Database**: MongoDB, Mongoose ORM
-* **Storage**: Cloudinary with Multer for image uploads
-* **Security**: Passport.js Authentication, Input Validation with Joi, Rate Limiting, Helmet Security Headers
+Rather than just another CRUD app, ReBorn is built with an emphasis on production resilience:
 
-## 📂 Architecture & Structure
-```text
-ReBorn/
-├── app.js            # Main entry point & server setup
-├── models/           # Mongoose schemas (e.g., listing.js)
-├── views/            # EJS templates (Home, Products, UI layout files)
-│   ├── includes/     # Reusable UI components (Navbar, Footer)
-│   ├── layouts/      # Boilerplate styling
-│   └── products/     # RESTful views for products
-├── public/           # Static assets & Uploaded Images
-└── init/             # Dummy data initialization logic
-```
+* **Robust Security Posture:** Integrated `Helmet.js` for strict HTTP headers (including custom CSP policies), enforced `express-rate-limit` for DDoS/brute-force mitigation on auth routes, and heavily sanitized all inputs via `Joi` middleware against NoSQL injection.
+* **Modern Authentication Flow:** Implemented secure session-based authentication utilizing `Passport.js` with local strategies, featuring stringent password strength algorithms and real-time duplicate email validations.
+* **Cloud File Processing:** Seamlessly integrated `Cloudinary` using `Multer-storage-cloudinary` to intercept, parse, compress, and remotely store user image uploads, keeping the core server lightweight.
+* **Tested & Reliable:** Backend business logic and Mongoose schema validations are covered by an automated `Jest` test suite comprising 16+ test cases.
+* **Containerized Deployment:** Fully Dockerized using optimized multi-stage Alpine Node images, making the app environment-agnostic and CI/CD ready.
 
-## ⚙️ Getting Started
+## 💻 Tech Stack & Architecture
+
+Built entirely around the **MVC (Model-View-Controller)** paradigm using the MEN stack.
+
+### Backend
+* **Runtime / Framework:** Node.js, Express.js
+* **Database:** MongoDB Atlas, Mongoose ORM
+* **Security:** Helmet, express-rate-limit, Joi, Passport.js, bcrypt
+* **Testing:** Jest, Supertest
+
+### Frontend
+* **Templating:** EJS (Embedded JavaScript) with layout blocks
+* **Styling:** Tailwind CSS, FontAwesome
+
+### DevOps & Tools
+* **Containerization:** Docker
+* **Hosting / CI Pipeline:** Render (Linked to GitHub)
+* **Cloud Storage:** Cloudinary API
+
+## ⚙️ Local Development Setup
+
+To get a local development environment up and running, follow these steps:
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) installed
-- [MongoDB](https://www.mongodb.com/) running locally or via cloud
+* [Node.js](https://nodejs.org/) (v18 or higher)
+* [MongoDB](https://www.mongodb.com/) (Local or Atlas GUI)
+* [Docker](https://www.docker.com/) (Optional, for containerized run)
 
-### Installation Steps
+### Installation
 
-1. **Clone the repository:**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/Sourav-11-11/Reborn.git
    cd Reborn
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Environment Configuration:**
-   - Copy `.env.example` to `.env`:
+3. **Configure Environment Variables**
+   Create a `.env` file in the root directory (use '.env.example' as a template):
+   ```env
+   ATLAS_URL=YOUR_MONGODB_CONNECTION_STRING
+   SECRET=YOUR_SECURE_SESSION_KEY
+   CLOUD_NAME=YOUR_CLOUDINARY_NAME
+   CLOUD_API_KEY=YOUR_CLOUDINARY_API_KEY
+   CLOUD_API_SECRET=YOUR_CLOUDINARY_API_SECRET
+   ```
+
+4. **Seed Database**
    ```bash
-   cp .env.example .env
+   npm run seed
    ```
-   - Update `.env` with your actual values:
-     - `MONGO_URL`: Your MongoDB connection string
-     - `PORT`: Server port (default: 8000)
-     - `SECRET`: Session secret (use a strong random string)
-     - `CLOUD_NAME`, `CLOUD_API_KEY`, `CLOUD_API_SECRET`: Cloudinary credentials
 
-4. **Database Setup:**
-   - Ensure MongoDB is running locally or use MongoDB Atlas
-   - Optionally seed with sample data:
+5. **Start Application**
    ```bash
-   node init/index.js
+   npm run dev    # Starts with nodemon for auto-reload
+   npm start      # Standard production execution
    ```
 
-5. **Start the server:**
-   ```bash
-   # Development (with auto-reload)
-   npm run dev
-   
-   # Production
-   npm run start
-   ```
+### 🐳 Docker Deployment
 
-6. **Open your browser:**
-   ```text
-   http://localhost:8000
-   ```
+The application is completely containerized. If Docker is installed, you can skip native installation:
 
-## 🧪 Testing
-Run the test suite:
-```bash
-npm test
-```
-
-## 🐳 Docker Support
-Build and run with Docker:
 ```bash
 docker build -t reborn .
 docker run -p 8000:8000 --env-file .env reborn
 ```
 
-## 🔐 Security Features
-- **Helmet.js**: HTTP security headers protection
-- **Rate Limiting**: Prevents brute force and DoS attacks
-- **Input Validation**: Joi schema validation for all inputs
-- **Password Strength**: Enforces strong password requirements (min 8 chars, uppercase, lowercase, digit, special char)
-- **Email Validation**: Duplicate email prevention and format validation
-- **Request Size Limits**: Protects against large payload attacks
-- **Session Security**: Secure session cookies with httpOnly flag
+## 🧪 Automated Testing
 
-## 📋 Future Roadmap
-- 📚 **Database Optimization**: Add indexing and query optimization for scalability.    
-- 🛡️ **Role-based Authorization**: Implement Admin dashboard and moderation features.
-- 💬 **Messaging System**: Enable buyer-seller communication directly on platform.
-- ⭐️ **Reviews & Ratings**: Add seller reputation system with user reviews.
-- 💳 **Payment Integration**: Integrate Stripe or Razorpay for secure transactions.
-- 📧 **Email Notifications**: Transactional emails for order confirmations and alerts.
-- 🚀 **Deployment**: Docker containerization and CI/CD pipeline with GitHub Actions.
-- 📱 **Mobile Responsiveness**: Enhance mobile experience and consider native mobile app.
+ReBorn utilizes **Jest** for testing API endpoints, error handling, and Joi data validation.
+
+```bash
+npm test
+```
+
+```bash
+npm test
+```
+
+## 📈 Future Roadmap
+
+- [ ] **Role-based Authorization:** Implement an Admin dashboard and moderation workflows.
+- [ ] **Real-time Messaging:** Enable buyer-seller communication via WebSockets.
+- [ ] **Payment Integration:** Secure transactions via Stripe or Razorpay.
+- [ ] **CI/CD Pipeline:** Automated testing and deployment with GitHub Actions.
 
 ---
 
 <div align="center">
   <b>Developed with 💚 by <a href="https://github.com/Sourav-11-11">Sourav Vemuru</a></b><br>
-  <i>B.Tech CSE | Full Stack Developer</i>
+  <i>If you found this project impressive, please consider giving it a ⭐!</i>
 </div>
