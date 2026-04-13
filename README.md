@@ -23,9 +23,10 @@ Global waste is a critical environmental challenge. Annually, **92M tons** of wa
 ReBorn is engineered with performance and scalability in mind using the **MEN stack** (MongoDB, Express, Node.js) with server-side rendering:
 
 * **Frontend**: EJS (Embedded JavaScript templates), Tailwind CSS
-* **Backend**: Node.js, Express.js
+* **Backend**: Node.js, Express.js, Helmet.js (Security), Rate Limiting
 * **Database**: MongoDB, Mongoose ORM
-* **Storage**: Multer (Local file processing)
+* **Storage**: Cloudinary with Multer for image uploads
+* **Security**: Passport.js Authentication, Input Validation with Joi, Rate Limiting, Helmet Security Headers
 
 ## 📂 Architecture & Structure
 ```text
@@ -59,27 +60,69 @@ ReBorn/
    npm install
    ```
 
-3. **Database Initialization (Optional):**
-   Seed the database with sample product listings:
+3. **Environment Configuration:**
+   - Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+   - Update `.env` with your actual values:
+     - `MONGO_URL`: Your MongoDB connection string
+     - `PORT`: Server port (default: 8000)
+     - `SECRET`: Session secret (use a strong random string)
+     - `CLOUD_NAME`, `CLOUD_API_KEY`, `CLOUD_API_SECRET`: Cloudinary credentials
+
+4. **Database Setup:**
+   - Ensure MongoDB is running locally or use MongoDB Atlas
+   - Optionally seed with sample data:
    ```bash
    node init/index.js
    ```
 
-4. **Start the server:**
+5. **Start the server:**
    ```bash
-   node app.js 
+   # Development (with auto-reload)
+   npm run dev
+   
+   # Production
+   npm run start
    ```
 
-5. **Open your browser:**
+6. **Open your browser:**
    ```text
    http://localhost:8000
    ```
 
-## 🔮 Future Roadmap
-- 🔐 **Authentication**: Implement JWT/Passport.js for User Login & Signup.
-- ☁️ **Cloud Storage**: Migrate from local Multer to Cloudinary/AWS S3.
-- 🛡️ **Role-based Auth**: Integrate Admin vs. User privileges.
-- 🚀 **Deployment**: Containerize and deploy via Render or Railway.
+## 🧪 Testing
+Run the test suite:
+```bash
+npm test
+```
+
+## 🐳 Docker Support
+Build and run with Docker:
+```bash
+docker build -t reborn .
+docker run -p 8000:8000 --env-file .env reborn
+```
+
+## 🔐 Security Features
+- **Helmet.js**: HTTP security headers protection
+- **Rate Limiting**: Prevents brute force and DoS attacks
+- **Input Validation**: Joi schema validation for all inputs
+- **Password Strength**: Enforces strong password requirements (min 8 chars, uppercase, lowercase, digit, special char)
+- **Email Validation**: Duplicate email prevention and format validation
+- **Request Size Limits**: Protects against large payload attacks
+- **Session Security**: Secure session cookies with httpOnly flag
+
+## 📋 Future Roadmap
+- 📚 **Database Optimization**: Add indexing and query optimization for scalability.    
+- 🛡️ **Role-based Authorization**: Implement Admin dashboard and moderation features.
+- 💬 **Messaging System**: Enable buyer-seller communication directly on platform.
+- ⭐️ **Reviews & Ratings**: Add seller reputation system with user reviews.
+- 💳 **Payment Integration**: Integrate Stripe or Razorpay for secure transactions.
+- 📧 **Email Notifications**: Transactional emails for order confirmations and alerts.
+- 🚀 **Deployment**: Docker containerization and CI/CD pipeline with GitHub Actions.
+- 📱 **Mobile Responsiveness**: Enhance mobile experience and consider native mobile app.
 
 ---
 

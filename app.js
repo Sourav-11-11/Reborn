@@ -8,6 +8,8 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 const User = require("./models/user.js");
 const ExpressError = require("./utils/ExpressError.js");
 
@@ -15,7 +17,8 @@ const productRouter = require("./routes/product.js");
 const userRouter = require("./routes/user.js");
 require('dotenv').config();
 
-const MONGO_URL = "mongodb://localhost:27017/reborn";
+const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017/reborn";
+const PORT = process.env.PORT || 8000;
 
 main()
     .then(() => {
@@ -32,7 +35,23 @@ async function main() {
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({extended: true}));
+
+// Security Middleware
+app.use(helmet());
+
+// Rate limiting
+const generalLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100, // General requests limited to 100 per 15 minutes
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+app.use(generalLimiter); // Apply to all routes
+
+// Request size limits
+app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+app.use(express.json({ limit: "10kb" }));
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
@@ -101,6 +120,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error.ejs", { message });
 });
 
-app.listen(8000, () => {
-    console.log("Server is listening on port 8000");
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });

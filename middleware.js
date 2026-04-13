@@ -21,8 +21,14 @@ module.exports.saveRedirectUrl = (req, res, next) => {
 module.exports.isOwner = async (req, res, next) => {
     let { id } = req.params;
     let product = await Product.findById(id);
-    if (!product.owner || !product.owner.equals(res.locals.currUser._id)) {
-        req.flash("error", "You don't have permission to modify this listing.");
+    
+    if (!res.locals.currUser) {
+        req.flash("error", "You must be logged in to modify this listing.");
+        return res.redirect(`/products/${id}`);
+    }
+    
+    if (!product.owner.equals(res.locals.currUser._id)) {
+        req.flash("error", "You do not have permission to modify this listing.");
         return res.redirect(`/products/${id}`);
     }
     next();

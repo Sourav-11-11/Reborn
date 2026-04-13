@@ -5,20 +5,25 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "test": "jest --detectOpenHandles --forceExit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "cloudinary": "^1.41.3",
     "connect-flash": "^0.1.1",
     "dotenv": "^17.4.2",
     "ejs": "^4.0.1",
     "ejs-mate": "^4.0.0",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.3.2",
     "express-session": "^1.19.0",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.1.0",
     "joi": "^18.1.2",
     "method-override": "^3.0.0",
     "mongoose": "^9.1.6",
@@ -27,5 +32,9 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^9.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "supertest": "^7.2.2"
   }
 }
