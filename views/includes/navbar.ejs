@@ -14,9 +14,15 @@
     </div>
 
     <div class="flex items-center gap-4">
-      <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center hover:bg-surface-variant transition-colors text-on-surface text-decoration-none">
-        <span class="material-symbols-outlined">person</span>
-      </a>
+      <% if (!currUser) { %>
+        <a href="/login" class="text-sm font-medium text-on-surface hover:opacity-80">Login</a>
+        <a href="/signup" class="text-sm font-bold text-white bg-tertiary px-4 py-2 rounded-full hover:opacity-90">Sign Up</a>
+      <% } else { %>
+        <a href="/logout" class="text-sm font-medium text-error hover:opacity-80 mr-2">Logout</a>
+        <a href="#" class="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/20 flex items-center justify-center hover:bg-surface-variant transition-colors text-on-surface text-decoration-none">
+          <span class="material-symbols-outlined">person</span>
+        </a>
+      <% } %>
     </div>
   </div>
 </nav>

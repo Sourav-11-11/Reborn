@@ -57,24 +57,25 @@
             <span class="material-symbols-outlined text-[16px]">contact_mail</span> Seller Details
           </h4>
           <div class="space-y-3 text-sm text-on-surface">
-            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Name:</span> <strong><%= product.seller %></strong></div>
-            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Degree:</span> <strong>BTech – 3rd Year</strong></div>
-            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Phone:</span> <strong>XXXXXX</strong></div>
-            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Email:</span> <strong>xxxxxx@gmail.com</strong></div>
+            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Name:</span> <strong><%= product.owner ? product.owner.username : product.seller %></strong></div>
+            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Degree:</span> <strong><%= product.owner && product.owner.degree ? product.owner.degree : 'BTech' %></strong></div>
+            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Phone:</span> <strong><%= product.contactNumber || 'Not Provided' %></strong></div>
+            <div class="grid grid-cols-[80px_1fr] gap-2"><span class="text-on-surface-variant">Email:</span> <strong><%= product.owner ? product.owner.email : 'Not Provided' %></strong></div>
           </div>
         </div>
       <% } %>
 
       <!-- ADMIN ACTIONS -->
+      <% if (currUser && product.owner && product.owner._id.equals(currUser._id)) { %>
       <div class="mt-12 pt-8 border-t border-outline-variant/20">
         <p class="text-[10px] font-bold uppercase tracking-[0.05em] text-outline mb-4">Admin Controls</p>
         <div class="flex flex-wrap gap-3">
           <a href="/products/<%= product._id %>/edit" class="px-5 py-2 border border-primary/30 text-primary rounded-lg text-sm font-bold hover:bg-primary/5 transition-colors">Edit</a>
-          
+
           <form method="POST" action="/products/<%= product._id %>?_method=DELETE" class="inline">
             <button class="px-5 py-2 border border-error/30 text-error rounded-lg text-sm font-bold hover:bg-error/5 transition-colors">Delete</button>
           </form>
-          
+
           <% if (product.sold) { %>
             <form method="POST" action="/products/<%= product._id %>/unsold?_method=PATCH" class="inline">
               <button class="px-5 py-2 border border-outline text-on-surface rounded-lg text-sm font-bold hover:bg-surface-variant transition-colors">Mark as Unsold</button>
@@ -86,7 +87,7 @@
           <% } %>
         </div>
       </div>
-
+      <% } %>
     </div>
   </div>
 </div>

@@ -1,8 +1,21 @@
 const Product = require("../models/listing.js");
 
 module.exports.index = async (req, res) => {
-    const allProducts = await Product.find({}).populate("owner");
-    res.render("products/index", { allProducts });
+    let { page = 1, limit = 16 } = req.query;
+    page = parseInt(page);
+    limit = parseInt(limit);
+
+    // Safety check
+    if (page < 1) page = 1;
+
+    const count = await Product.countDocuments();
+    const totalPages = Math.ceil(count / limit);
+
+    const allProducts = await Product.find({})
+        .populate("owner")
+        .limit(limit);
+
+    res.render("products/index", { allProducts, currentPage: page, totalPages, limit });
 };
 
 module.exports.renderNewForm = (req, res) => {
