@@ -17,7 +17,7 @@ const productRouter = require("./routes/product.js");
 const userRouter = require("./routes/user.js");
 require('dotenv').config();
 
-const MONGO_URL = process.env.MONGO_URL || "mongodb://localhost:27017/reborn";
+const MONGO_URL = process.env.ATLAS_URL || process.env.MONGO_URL || "mongodb://localhost:27017/reborn";
 const PORT = process.env.PORT || 8000;
 
 main()
@@ -56,7 +56,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
 const sessionOptions = {
-    secret: process.env.SECRET || 'fallbacksecret',
+    secret: process.env.SECRET_KEY || process.env.SECRET || 'fallbacksecret',
     resave: false,
     saveUninitialized: true,
     cookie: { 
