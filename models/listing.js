@@ -39,6 +39,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         default: "Sourav"
     },
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
     contactNumber: {
         type: String
     },
